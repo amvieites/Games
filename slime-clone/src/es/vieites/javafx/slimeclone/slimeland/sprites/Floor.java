@@ -8,8 +8,8 @@ import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 /**
- *
- * @author macbook
+ * This class represents the playground where the players stand and the ball
+ * bounce.
  */
 public class Floor extends AbstractSprite {
 
@@ -54,7 +54,7 @@ public class Floor extends AbstractSprite {
                 break;
         }
     }
-    
+
     public void collide(Ball sprite) {
         if (intersects((Circle) sprite.getNode())) {
             if (!isIgnoreCollisionWith(sprite)) {
@@ -65,18 +65,18 @@ public class Floor extends AbstractSprite {
             removeIgnoreCollisionWith(sprite);
         }
     }
-    
+
     public void collide(Slime sprite) {
         if (intersects((Arc) sprite.getNode())) {
             sprite.setVy(0d);
             sprite.setY(this.getY());
         }
     }
-    
+
     public boolean intersects(Arc arc) {
         return arc.getTranslateY() >= getY();
     }
-    
+
     public boolean intersects(Circle circle) {
         double rectCenterX = getAsRectangle().getTranslateX() + getAsRectangle().getWidth() / 2d;
         double rectCenterY = getAsRectangle().getTranslateY() + getAsRectangle().getHeight() / 2d;
@@ -104,7 +104,7 @@ public class Floor extends AbstractSprite {
 
         return (cornerDistance_sq <= Math.pow(circle.getRadius(), 2));
     }
-    
+
     public Rectangle getAsRectangle() {
         return (Rectangle) getNode();
     }

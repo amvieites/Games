@@ -1,11 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package es.vieites.javafx.slimeclone.engine;
 
-import es.vieites.javafx.slimeclone.slimeland.sprites.Slime;
 import es.vieites.javafx.slimeclone.slimeland.sprites.Ball;
+import es.vieites.javafx.slimeclone.slimeland.sprites.Slime;
 import java.util.*;
 
 /**
@@ -19,7 +15,7 @@ public class SpriteManager {
     private Ball slimeBall = null;
     private Slime player1 = null;
     private Slime player2 = null;
-    
+
     public SpriteManager(Ball ball, Slime p1, Slime p2) {
         this.slimeBall = ball;
         this.player1 = p1;
@@ -57,7 +53,7 @@ public class SpriteManager {
     public List<AbstractSprite> getToCheckCollisionSprites() {
         return CHECK_COLLISIONS;
     }
-    
+
     public static void cleanUpSprites() {
         SPRITES.removeAll(CLEAN_UP_SPRITES);
         CLEAN_UP_SPRITES.clear();

@@ -57,13 +57,10 @@ public class ScoresHolder {
             winner = EndPointTimerTask.Slimes.slime1;
         }
 
-        if (slime1Score == MAX_POINTS) {
-            // TODO slime1 wins
-        } else if (slime2Score == MAX_POINTS) {
-            // TODO slime2 wins
-        } else {
-            timer.schedule(new EndPointTimerTask(winner), 2000l);
-        }
+
+        timer.schedule(new EndPointTimerTask(winner, slime1Score == MAX_POINTS
+                || slime2Score == MAX_POINTS), 2000l);
+
 
         paintPoints();
     }
@@ -94,6 +91,18 @@ public class ScoresHolder {
         }
     }
 
+    /**
+     * Reset the scores.
+     */
+    public void reset() {
+        for (int i = 0; i < MAX_POINTS; i++) {
+            slime1ScoreBar.get(i).setFill(Color.TRANSPARENT);
+            slime2ScoreBar.get(i).setFill(Color.TRANSPARENT);
+        }
+        slime1Score = 0;
+        slime2Score = 0;
+    }
+
     private Circle makeEmptyPoint(double x, double y) {
         Circle circle = new Circle(10d);
         circle.setTranslateX(x);
@@ -114,9 +123,11 @@ public class ScoresHolder {
 class EndPointTimerTask extends TimerTask {
 
     private Slimes winner = null;
+    private boolean endGame = false;
 
-    public EndPointTimerTask(Slimes slime) {
-        winner = slime;
+    public EndPointTimerTask(Slimes slime, boolean endGame) {
+        this.winner = slime;
+        this.endGame = endGame;
     }
 
     @Override
@@ -144,6 +155,10 @@ class EndPointTimerTask extends TimerTask {
 
         ball.setVx(0);
         ball.setVy(0);
+
+        if (this.endGame) {
+            su.getScoresHolder().reset();
+        }
 
         su.setPaused(false);
     }

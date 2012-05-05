@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package es.vieites.javafx.slimeclone.engine;
 
 import javafx.animation.Animation;
@@ -15,8 +11,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
- *
- * @author macbook
+ * The abstract universe.
  */
 public abstract class AbstractUniverse {
 

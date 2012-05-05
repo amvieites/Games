@@ -8,8 +8,10 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 /**
- *
- * @author macbook
+ * A slime volley game.
+ * @author Alejandro Martínez Vieites (@amvieites)
+ * <p>Original idea: http://oneslime.net</p>
+ * <p>Basic notions of JavaFX applied to games: Carl Dea (@carldea)</p>
  */
 public class SlimeClone extends Application {
 

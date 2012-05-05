@@ -1,19 +1,14 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package es.vieites.javafx.slimeclone.slimeland.sprites;
 
 import es.vieites.javafx.slimeclone.engine.AbstractSprite;
 import javafx.event.Event;
 import javafx.scene.shape.Arc;
-
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 /**
- *
- * @author macbook
+ * This class represents the walls of the playground. Left wall, right wall and
+ * the net share the same behavior.
  */
 public class Wall extends AbstractSprite {
 

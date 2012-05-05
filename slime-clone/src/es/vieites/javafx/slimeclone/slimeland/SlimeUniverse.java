@@ -16,8 +16,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
- *
- * @author macbook
+ * The Slime Universe.
  */
 public class SlimeUniverse extends AbstractUniverse {
 
