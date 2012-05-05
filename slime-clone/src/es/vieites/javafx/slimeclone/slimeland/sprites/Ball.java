@@ -10,8 +10,8 @@ import javafx.scene.shape.Circle;
  */
 public class Ball extends AbstractSprite {
     
-    private static final double MAX_SPEED_Y = 60;
-    private static final double MAX_SPEED_X = 120;
+    private static final double MAX_SPEED_Y = 50;
+    private static final double MAX_SPEED_X = 60;
 
     public Ball(double x, double y, double r) {
         setNode(new Circle(r));
